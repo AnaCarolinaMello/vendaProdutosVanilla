@@ -9,17 +9,27 @@
     <link rel="icon" href="./public/img/logo2.svg">
 </head>
 <body>
+    <div id="divLoader">
+        <div class="loader"></div>
+    </div>
     <header>
-        <img src="./public/img/logo1.svg"></img>
+        <img src="./public/img/logo1.svg" id="logo"></img>
         <div class='menu'>
-            <h3 id='home'><a href="index.html">Home</a></h3>
+            <h3 id='home'><a>Home</a></h3>
             <h3><a href="./view/pesquisa.html">Pesquisar</a></h3>
             <h3><a>About</a></h3>
             <h3><a>Contato</a></h3>
         </div>
         <div class='botoes'>
-            <button id='cadastro'>Cadastrar</button>
-            <button id='entrar'>Entrar</button>
+            <button class='cadastro'>Cadastrar</button>
+            <button class='entrar'>Entrar</button>
+        </div>
+        <p class='menu-icon'>---</p>
+        <div class='menuMini'>
+            <h3 id='home'><a>Home</a></h3>
+            <h3><a href="./view/pesquisa.html">Pesquisar</a></h3>
+            <h3><a>About</a></h3>
+            <h3><a>Contato</a></h3>
         </div>
     </header>
     <div id='tituloMain'>
@@ -40,8 +50,8 @@
             <h3>Curso: Engenharia de software</h3>
         </div>
         <div class='botoes'>
-            <button id='cadastro'>Cadastrar</button>
-            <button id='entrar'>Entrar</button>
+            <button class='cadastro'>Cadastrar</button>
+            <button class='entrar'>Entrar</button>
         </div>
     </footer>
     <script src="./public/js/script.js"></script>

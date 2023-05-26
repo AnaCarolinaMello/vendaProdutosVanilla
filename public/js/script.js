@@ -1,3 +1,17 @@
+setTimeout(()=>{
+  const loader = document.querySelector('#divLoader')
+  const header = document.querySelector('header')
+  const titleContent = document.querySelector('#tituloMain')
+  const content = document.querySelector('main')
+  const footer = document.querySelector('footer')
+  loader.style.display = 'none'
+  header.style.display = 'flex'
+  titleContent.style.display = 'flex'
+  content.style.display = 'flex'
+  footer.style.display = 'flex'
+}, 1800);
+
+
 fetch("https://fakestoreapi.com/products")
       .then((response) => response.json())
       .then((data) => setProdutos(data))

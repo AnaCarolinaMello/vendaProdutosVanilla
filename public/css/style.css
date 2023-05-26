@@ -7,29 +7,88 @@ body{
     background: #2e2e2e;
 }
 
+#divLoader{
+    z-index: -1;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e2e2e;
+}
+
+.loader {
+    border: 16px solid #7979796c;
+    border-radius: 50%;
+    border-top: 16px solid #3776c9;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 header{
     height: 12vh;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-around;
     position: sticky;
     top: 0;
     background: rgb(0, 87, 145);
+    font-size: 2.5vh;
 }
 
 header img{
     height: 9vh;
 }
 
+.menu-icon{
+    display: none;
+}
+
+.menuMini{
+    flex: 1;
+    z-index: -1;
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    background: rgba(0, 2, 3, 0.507);
+    height: 100vh;
+    width: 50%;
+    margin-top: 40%;
+}
+
+.menuMini h3{
+    margin-top: 10%;
+}
+
+.menuMini p h3{
+    position: absolute;
+    z-index: 100;
+}
+
 .menu{
     width: 40%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    margin-left: 12%;
+    margin-right: 12%;
 }
 
 
-header h3 {
+header h3{
     text-align: center;
 }
 
@@ -55,7 +114,15 @@ header h3 a:hover{
     font-family: 'Roboto';
 }
 
+.entrar{
+    margin-left: 9%;
+}
+
 button{
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #1a1a1a;
     padding-left: 7%;
     padding-right: 7%;
@@ -79,7 +146,7 @@ button:hover{
 
 #tituloMain{
     font-family: 'Roboto';
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -88,14 +155,14 @@ button:hover{
 }
 
 #tituloMain h1{
-    font-size: 56px;
+    font-size: 7vh;
     color: white;
 }
 
 #tituloMain select{
     height: 5vh;
     width: 20%;
-    font-size: 20px;
+    font-size: 3vh;
     border-radius: 5px;
     margin-right: 1.5%;
 }
@@ -105,7 +172,7 @@ button:hover{
 }
 
 main{
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
@@ -129,6 +196,10 @@ main{
     text-align: center;
 }
 
+.produtos h2{
+    font-size: 3.5vh;
+}
+
 .produtos img{
     height: 24vh;
     width: 19vh;
@@ -138,10 +209,12 @@ main{
 
 .descricao{
     margin-bottom: 4%;
+    font-size: 2.2vh;
     text-align: center;
 }
 
 .preco{
+    font-size: 2.9vh;
     font-weight: bold;
     margin-bottom: 9%;
 }
@@ -162,7 +235,7 @@ main button:hover{
 }
 
 footer{
-    display: flex;
+    display: none;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -172,6 +245,7 @@ footer{
     background: rgb(0, 87, 145);
     font-family: 'Roboto';
     color: white;
+    font-size: 2vh;
 }
 
 footer img{
@@ -190,4 +264,70 @@ footer img{
     margin-left: 3%;
     margin-right: 3%;
     font-size: 100%;
+}
+
+footer .botoes{
+    margin-right: 2%;
+}
+
+@media only screen and (max-width: 1510px) {
+    .produtos img{
+        height: 22vh;
+        width: 17vh;
+    }
+}
+@media only screen and (max-width: 1148px) {
+    .menu{
+        width: 50%;
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+    main{
+        justify-content: space-evenly;
+    }
+    .produtos{
+        width: 40%;
+    }
+    .produtos img{
+        height: 20vh;
+        width: 15vh;
+    }
+    main button{
+        background-color: #b4d4ffaf;
+        margin-bottom: 15%;
+    }
+}
+@media only screen and (max-width: 892px) {
+    main{
+        justify-content: space-evenly;
+    }
+    .produtos{
+        width: 80%;
+    }
+    
+}
+@media only screen and (min-width: 787px) {
+    .menuMini{
+        display: none;
+    }
+}
+@media only screen and (max-width: 787px) {
+    header{
+        height: 8vh;
+        justify-content: flex-start;
+    }
+    #logo{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+    .botoes{
+        display: none;
+    }
+    .menu-icon{
+        display: block;
+        color: white;
+        margin-left: 8%;
+    }
 }

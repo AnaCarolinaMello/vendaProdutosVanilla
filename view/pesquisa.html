@@ -9,24 +9,42 @@
     <link rel="icon" href="../public/img/logo2.svg">
 </head>
 <body>
+    <div id="divLoader">
+        <div class="loader"></div>
+    </div>
     <header>
-        <img src="../public/img/logo1.svg"></img>
+        <img src="../public/img/logo1.svg" id="logo"></img>
         <div class='menu'>
             <h3 id='home'><a href="../index.html">Home</a></h3>
-            <h3><a href="pesquisa.html">Pesquisar</a></h3>
+            <h3><a>Pesquisar</a></h3>
             <h3><a>About</a></h3>
             <h3><a>Contato</a></h3>
         </div>
         <div class='botoes'>
-            <button id='cadastro'>Cadastrar</button>
-            <button id='entrar'>Entrar</button>
+            <button class='cadastro'>Cadastrar</button>
+            <button class='entrar'>Entrar</button>
+        </div>
+        <p class='menu-icon'>---</p>
+        <div class='menuMini'>
+            <h3 id='home'><a href="../index.html">Home</a></h3>
+            <h3><a>Pesquisar</a></h3>
+            <h3><a>About</a></h3>
+            <h3><a>Contato</a></h3>
         </div>
     </header>
     <div id='pesquisa'>
         <input type="text" placeholder='Pesquise por um produto...' id="pesquisaInput"/>
         <button id="pesquisar"><img src="../public/img/pesquisa.svg"></button>
     </div>
-    <main></main>
+    <div id="divLoaderPesquisa">
+        <div class="loader"></div>
+    </div>
+    <div id="notFound">
+        <h1>Produto não encontrado</h1>
+        <img src="../public/img/norFound.svg">
+    </div>
+    <main>
+    </main>
     <script src="../public/js/pesquisa.js"></script>
 </body>
 </html>
