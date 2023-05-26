@@ -1,0 +1,61 @@
+body{
+    background: #2e2e2e;
+}
+
+#detalhes{
+    width: 100%;
+}
+
+#titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+#titulo a{
+    margin-left: 2%;
+    margin-right: 4%;
+}
+
+#produtoTitulo{
+    color: white;
+    text-align: center;
+    width: 76%;
+    font-size: 40px;
+}
+
+#produto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3%;
+}
+
+#imagem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66vh;
+    width: 45%;
+    background: white;
+    border-radius: 20px;
+}
+
+#detalhes h2{
+    color: white;
+}
+
+#detalhes p{
+    margin-top: 10%;
+    color: white;
+}
+
+#imagem img{
+    height: 50vh;
+}
+
+#comprar{
+    width: 83%;
+    margin-left: 7%;
+}
