@@ -47,13 +47,13 @@ function setProdutos(data){
         <img src=${value.image} alt=${value.title} />
         <div class='descricao' id="descricao${value.id}">${value.description}</div>
         <h3 class='preco'>Preço: R$ ${value.price}</h3>
-        <a href="./view/detalhes.html?id=${value.id}" id="button${value.id}"><button>Detalhes</button></a>
+        <a href="./view/detalhes?id=${value.id}" id="button${value.id}"><button>Detalhes</button></a>
       </div>`
       document.querySelectorAll(`#descricao${value.id} p`).forEach((element)=>{
         element.style = "text-align: center"
       })
       document.querySelector(`#button${value.id}`).addEventListener('click', ()=>{
-        window.location.assign(`./view/detalhes.html?id=${value.id}`)
+        window.location.assign(`./view/detalhes?id=${value.id}`)
       })
     })
 }

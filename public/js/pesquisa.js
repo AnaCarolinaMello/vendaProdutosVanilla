@@ -54,9 +54,9 @@ async function handleSearchClick(){
       }, 1800)
       return
     }
-    await getSearch(input.value)
-    // let searchProdutos = produtos.filter(x => x.title.toLowerCase().includes(input.value.toLowerCase()) || x.category.toLowerCase().includes(input.value.toLowerCase()))
-    let searchProdutos = produtos
+    // await getSearch(input.value)
+    // let searchProdutos = produtos
+    let searchProdutos = produtos.filter(x => x.title.toLowerCase().includes(input.value.toLowerCase()) || x.category.toLowerCase().includes(input.value.toLowerCase()))
     if(searchProdutos.length < 1) {
       console.log(!searchProdutos.length< 1)
       setTimeout(()=>{
