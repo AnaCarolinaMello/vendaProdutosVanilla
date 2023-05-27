@@ -54,9 +54,9 @@ async function handleSearchClick(){
       }, 1800)
       return
     }
-    await getSearch(input.value)
-    // let searchProdutos = produtos.filter(x => x.title.toLowerCase().includes(input.value.toLowerCase()) || x.category.toLowerCase().includes(input.value.toLowerCase()))
-    let searchProdutos = produtos
+    // await getSearch(input.value)
+    // let searchProdutos = produtos
+    let searchProdutos = produtos.filter(x => x.title.toLowerCase().includes(input.value.toLowerCase()) || x.category.toLowerCase().includes(input.value.toLowerCase()))
     if(searchProdutos.length < 1) {
       console.log(!searchProdutos.length< 1)
       setTimeout(()=>{
@@ -74,13 +74,13 @@ async function handleSearchClick(){
         <img src=${value.image} alt=${value.title} />
         <div class='descricao' id="descricao${value.id}">${value.description}</div>
         <h3 class='preco'>Preço: R$ ${value.price}</h3>
-        <a href="./view/detalhes.html?id=${value.id}" id="button${value.id}"><button>Detalhes</button></a>
+        <a href="./view/detalhes?id=${value.id}" id="button${value.id}"><button>Detalhes</button></a>
       </div>`
       document.querySelectorAll(`#descricao${value.id} p`).forEach((element)=>{
         element.style = "text-align: center"
       })
       document.querySelector(`#button${value.id}`).addEventListener('click', ()=>{
-        window.location.assign(`./view/detalhes.html?id=${value.id}`)
+        window.location.assign(`./view/detalhes?id=${value.id}`)
       })
     })
     setTimeout(()=>{
