@@ -46,10 +46,10 @@ function setProdutos(data){
         <img src=${value.image} alt=${value.title} />
         <p class='descricao'>${value.description}</p>
         <h3 class='preco'>Preço: R$ ${value.price}</h3>
-        <a href="./view/detalhes.html?id=${value.id}" id="button${value.id}"><button>Detalhes</button></a>
+        <a href="./view/detalhes?id=${value.id}" id="button${value.id}"><button>Detalhes</button></a>
       </div>`
       document.querySelector(`#button${value.id}`).addEventListener('click', ()=>{
-        window.location.assign(`./view/detalhes.html?id=${value.id}`)
+        window.location.assign(`./view/detalhes?id=${value.id}`)
       })
     })
 }
