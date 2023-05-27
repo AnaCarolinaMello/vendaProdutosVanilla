@@ -12,9 +12,9 @@ setTimeout(()=>{
 }, 1800);
 
 
-fetch("https://fakestoreapi.com/products")
+fetch("http://diwserver.vps.webdock.cloud:8765/products")
       .then((response) => response.json())
-      .then((data) => setProdutos(data))
+      .then((data) => setProdutos(data.products))
       .catch((error) => console.error(error));
 
 
@@ -38,16 +38,20 @@ closeButton.addEventListener('click', ()=>{
 })
 
 function setProdutos(data){
+  console.log(data)
     populateSelect(data)
     let main = document.querySelector("main")
     data.forEach((value)=>{
         main.innerHTML += `<div id=${value.id} class="produtos ${value.category}">
         <h2>${value.title}</h2>
         <img src=${value.image} alt=${value.title} />
-        <p class='descricao'>${value.description}</p>
+        <div class='descricao' id="descricao${value.id}">${value.description}</div>
         <h3 class='preco'>Preço: R$ ${value.price}</h3>
         <a href="./view/detalhes.html?id=${value.id}" id="button${value.id}"><button>Detalhes</button></a>
       </div>`
+      document.querySelectorAll(`#descricao${value.id} p`).forEach((element)=>{
+        element.style = "text-align: center"
+      })
       document.querySelector(`#button${value.id}`).addEventListener('click', ()=>{
         window.location.assign(`./view/detalhes.html?id=${value.id}`)
       })

@@ -7,12 +7,13 @@ setTimeout(()=>{
 
 const urlParams  = new URLSearchParams(window.location.search)
 const id = urlParams.get('id')
-fetch("https://fakestoreapi.com/products/"+id)
+fetch("http://diwserver.vps.webdock.cloud:8765/products/"+id)
       .then((response) => response.json())
       .then((data) => populateScreen(data))
       .catch((error) => console.error(error));
 
 function populateScreen(data){
+      console.log(data)
       if(window.innerWidth <= 596){
             voltar.textContent = "<"
       }else{
@@ -21,10 +22,10 @@ function populateScreen(data){
       const imgProduto = document.querySelector("#imagem img")
       const tituloProduto = document.querySelector("#produtoTitulo")
       const precoProduto = document.querySelector("#comprar h2")
-      const descricaoProduto = document.querySelector("#comprar p")
+      const descricaoProduto = document.querySelector("#descricao")
       imgProduto.src = data.image
       tituloProduto.textContent = data.title
-      descricaoProduto.textContent = data.description
+      descricaoProduto.innerHTML = data.description
       precoProduto.textContent = "Preço: R$ " + data.price
 }
 
