@@ -52,26 +52,52 @@ header{
 header img{
     height: 9vh;
 }
+
 .menu-icon{
     display: none;
+    height: 4vh;
+}
+
+.menu-icon:hover{
+    cursor: pointer;
 }
 
 .menuMini{
     flex: 1;
-    z-index: -1;
-    display: none;
+    z-index: 10;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     position: absolute;
     background: rgba(0, 2, 3, 0.507);
     height: 100vh;
-    width: 50%;
-    margin-top: 40%;
+    width: 100%;
+    color: white;
+    font-family: 'Roboto';
+    font-size: 3vh;
+}
+
+#close{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+#close img{
+    height: 6vh;
 }
 
 .menuMini h3{
     margin-top: 10%;
+}
+
+.menuMini a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .menuMini p h3{
@@ -82,7 +108,7 @@ header img{
 .menu{
     width: 40%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-left: 12%;
     margin-right: 12%;
 }
@@ -253,6 +279,7 @@ main{
     font-size: 2.2vh;
     margin-bottom: 4%;
     text-align: center;
+    width: 100%;
 }
 
 .preco{
@@ -312,11 +339,6 @@ main button:hover{
     }
     
 }
-@media only screen and (min-width: 787px) {
-    .menuMini{
-        display: none;
-    }
-}
 @media only screen and (max-width: 787px) {
     header{
         height: 8vh;
@@ -334,6 +356,45 @@ main button:hover{
     .menu-icon{
         display: block;
         color: white;
-        margin-left: 8%;
+        margin-left: 3%;
+    }
+    .menuMini{
+        display: none;
+    }
+    #pesquisa{
+        margin-top: 5%;
+    }
+    #pesquisaInput{
+        width: 85%;
+    }
+    #pesquisar{
+        width: 15%;
+    }
+    #notFound{
+        font-size: 2.3vh;
+    }
+    #notFound img{
+        height: 20vh;
+        margin-top: 2%;
+    }
+}
+
+@media only screen and (max-width: 611px) {
+    .loader {
+        width: 80px;
+        height: 80px;
+    }
+    .menu-icon{
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width: 417px) {
+    .menu-icon{
+        margin-left: 7%;
+    }
+    #notFound img{
+        height: 18vh;
+        margin-top: 2%;
     }
 }

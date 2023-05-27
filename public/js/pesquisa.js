@@ -19,7 +19,24 @@ input.addEventListener('keydown', function(event) {
       event.preventDefault()
       handleSearchClick()
     }
-  });
+});
+
+const menuIcon = document.querySelector('.menu-icon')
+const menuMini = document.querySelector('.menuMini')
+const closeButton = document.querySelector('#close')
+const body = document.querySelector('body')
+menuMini.style.display = 'none'
+menuIcon.addEventListener('click', ()=>{
+    menuMini.style.display = 'flex'
+    menuIcon.style.display = 'none'
+    body.style = 'overflow: hidden;'
+})
+closeButton.addEventListener('click', ()=>{
+    if(window.innerWidth > 787) menuIcon.style.display = 'none'
+    else menuIcon.style.display = 'block'
+    menuMini.style.display = 'none'
+    body.style = 'overflow: scroll;'
+})
 
 async function handleSearchClick(){
     let main = document.querySelector("main")
@@ -85,3 +102,17 @@ async function getSearch(input) {
       console.error(error);
     }
 }
+
+function checkMiniMenu(){
+  if(window.innerWidth <= 787) menuIcon.style.display = 'block'
+  else menuIcon.style.display = 'none'
+}
+
+const mediaQueryList = window.matchMedia('(max-width: 787px)');
+mediaQueryList.addListener((mediaQueryList)=>{
+    if (mediaQueryList.matches) {
+        checkMiniMenu()
+    }else{
+      menuIcon.style.display = 'none'
+    }
+});

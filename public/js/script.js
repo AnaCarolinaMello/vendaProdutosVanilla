@@ -20,6 +20,22 @@ fetch("https://fakestoreapi.com/products")
 
 const select = document.querySelector("#categorias")
 select.addEventListener('change', handleSelectChange)
+const menuIcon = document.querySelector('.menu-icon')
+const menuMini = document.querySelector('.menuMini')
+const closeButton = document.querySelector('#close')
+const body = document.querySelector('body')
+menuMini.style.display = 'none'
+menuIcon.addEventListener('click', ()=>{
+    menuMini.style.display = 'flex'
+    menuIcon.style.display = 'none'
+    body.style = 'overflow: hidden;'
+})
+closeButton.addEventListener('click', ()=>{
+    if(window.innerWidth > 787) menuIcon.style.display = 'none'
+    else menuIcon.style.display = 'block'
+    menuMini.style.display = 'none'
+    body.style = 'overflow: scroll;'
+})
 
 function setProdutos(data){
     populateSelect(data)
@@ -69,3 +85,17 @@ function populateSelect(data){
       select.add(option);
     })
 }
+
+function checkMiniMenu(){
+  if(window.innerWidth <= 787) menuIcon.style.display = 'block'
+  else menuIcon.style.display = 'none'
+}
+
+const mediaQueryList = window.matchMedia('(max-width: 787px)');
+mediaQueryList.addListener((mediaQueryList)=>{
+    if (mediaQueryList.matches) {
+        checkMiniMenu()
+    }else{
+      menuIcon.style.display = 'none'
+    }
+});

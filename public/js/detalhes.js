@@ -16,7 +16,7 @@ function populateScreen(data){
       if(window.innerWidth <= 596){
             voltar.textContent = "<"
       }else{
-            voltar.textContent = "&lt; Voltar"
+            voltar.textContent = "<Voltar"
       }
       const imgProduto = document.querySelector("#imagem img")
       const tituloProduto = document.querySelector("#produtoTitulo")

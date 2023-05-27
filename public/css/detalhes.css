@@ -173,6 +173,13 @@ button:hover{
     }
 }
 
+@media only screen and (max-width: 611px) {
+    .loader {
+        width: 80px;
+        height: 80px;
+    }
+}
+
 @media only screen and (max-width: 460px){
     #produtoTitulo{
         font-size: 4.5vh;
